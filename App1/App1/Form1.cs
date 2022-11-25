@@ -13,19 +13,12 @@ namespace App1
     public partial class Form1 : Form
     {
         List<string> split = new List<string>();
-        List<string> matchValues = new List<string>();
         public Form1()
         {
             InitializeComponent();
-            this.textBox1.TextChanged += TextBox1_TextChanged;
             string readFile = System.IO.File.ReadAllText(@"ReadInputFile.txt");
             var splitFile = readFile.Split('~');
             split.AddRange(splitFile);
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,8 +39,7 @@ namespace App1
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            
+        {            
             if (!string.IsNullOrEmpty(this.textBox2.Text))
             {
                 int lineindex = Convert.ToInt32(this.textBox2.Text);
@@ -57,6 +49,8 @@ namespace App1
 
                 if (splitline.Count() > 0 && splitline.Count() - 1 >= Convert.ToInt32(this.textBox3.Text))
                     this.textBox4.Text = splitline[elementIndex];
+                else
+                    {}
             }
         }
     }
