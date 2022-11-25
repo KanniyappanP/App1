@@ -18,7 +18,7 @@ namespace App1
         {
             InitializeComponent();
             this.textBox1.TextChanged += TextBox1_TextChanged;
-            string readFile = System.IO.File.ReadAllText(@"C:\Users\k.h.panneerselvam\source\repos\App1\App1\ReadInputFile.txt");
+            string readFile = System.IO.File.ReadAllText(@"ReadInputFile.txt");
             var splitFile = readFile.Split('~');
             split.AddRange(splitFile);
         }
